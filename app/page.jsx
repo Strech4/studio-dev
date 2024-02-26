@@ -1,5 +1,4 @@
-import { Cursor } from "@/components/Cursor";
-import { Divider } from "@/components/divider";
+import { Divider } from "@/components/Divider";
 import { Header } from "@/components/home/Header";
 import { Nav } from "@/components/home/Nav";
 import { About } from "@/components/home/About";
@@ -13,7 +12,6 @@ import { Footer } from "@/components/Footer";
 export default function Home() {
     return (
         <>
-           {/* <Cursor /> */}
            <Nav />
            <main className="flex flex-col items-center">
                 <Header />
