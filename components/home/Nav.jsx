@@ -10,7 +10,6 @@ const links = [
     { name: "A propos", link: "#about" },
     { name: "Hébergement", link: "#hosting" },
     { name: "Contact", link: "#contact" },
-    
 ]
 
 export const Nav = () => {

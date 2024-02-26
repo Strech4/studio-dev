@@ -1,6 +1,7 @@
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import ActiveSectionContextProvider from "@/context/ActiveSectionContext";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const mont = Montserrat({
     subsets: ['latin'],
@@ -21,13 +22,15 @@ export const metadata = {
         'web-master', 
         'design', 
         'design web', 
-        'développeur', 
+        'développeur',
         'portfolios',
         'vitrine',
         'e-commerce',
         'refonte',
         'hébergement',
         'maintenance',
+        'front-end',
+        'dev front-end',
     ],
     publisher: 'Studio-dev',
 };
@@ -38,6 +41,7 @@ export default function RootLayout({ children }) {
             <body className={`pt-28 sm:pt-28 ${mont.className}`}>
                 <ActiveSectionContextProvider>
                     {children}
+                    <SpeedInsights />
                 </ActiveSectionContextProvider>
             </body>
         </html>
