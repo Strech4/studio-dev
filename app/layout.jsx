@@ -41,6 +41,7 @@ export default function RootLayout({ children }) {
             <body className={`pt-28 sm:pt-28 ${mont.className}`}>
                 <ActiveSectionContextProvider>
                     {children}
+                    {/* Speed Insights = vecel production tool */}
                     <SpeedInsights />
                 </ActiveSectionContextProvider>
             </body>

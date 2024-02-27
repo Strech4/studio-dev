@@ -18,7 +18,7 @@ export const Marquee = () => {
                 quality={95}
                 alt='Green wave on top of the marquee'
             />
-            <section className='w-full  overflow-y-hidden whitespace-nowrap bg-high-contrast'>
+            <section className='w-full  overflow-hidden whitespace-nowrap bg-high-contrast'>
                 <motion.h2
                     className='text-[4rem] sm:text-[8rem] font-bold fot-mont text-bg uppercase italic'
                     style={{ x }}
