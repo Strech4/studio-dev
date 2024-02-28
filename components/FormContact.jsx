@@ -4,6 +4,8 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormErrorsParagraph } from './FormErrorsParagraph';
+import toast from "react-hot-toast";
+import { sendEmail } from '@/lib/SendEmail';
 
 
 const formSchema = z.object({
@@ -20,12 +22,25 @@ const formSchema = z.object({
 
 export const FormContact = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, reset, formState: { errors } } = useForm({
         resolver: zodResolver(formSchema)
     })
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = async (data) => {
+
+        if(!data){
+            return null
+        }
+
+        const emailHasBeenSend = await sendEmail(data)
+
+        if(emailHasBeenSend){
+            toast.success('Email envoyé')
+            reset()
+        } else {
+            toast.error('Oupps ça na pas marcher ! vous pouvez toujours me contactez via mon email : contact@studio-dev.fr')
+        }
+
     }
 
     return (
@@ -40,6 +55,7 @@ export const FormContact = () => {
                     placeholder='votre.email@exemple.fr'
                     name='email'
                     id='email'
+                    required
                     {...register("email")}
                 />
                 {errors.email && <FormErrorsParagraph value={`Adresse email invalide.`} />}
@@ -50,6 +66,8 @@ export const FormContact = () => {
                     placeholder='Objet'
                     name='objet'
                     id='objet'
+                    required
+                    maxLength="30"
                     {...register("emailObject")}
                 />
                 {errors.emailObject && <FormErrorsParagraph value={`L'objet de votre mail doit contenir 2 à 30 caractères.`} />}
@@ -58,8 +76,10 @@ export const FormContact = () => {
                     className='py-3 px-4 resize-none rounded-xl outline-none bg-ui-bg placeholder:text-low-contrast'
                     name="message"
                     id="message"
+                    required
                     placeholder='Votre message'
                     rows="9"
+                    maxLength="1500"
                     {...register('message')}
                 >
                 </textarea>

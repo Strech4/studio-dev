@@ -2,6 +2,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import ActiveSectionContextProvider from "@/context/ActiveSectionContext";
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Toaster } from 'react-hot-toast';
 
 const mont = Montserrat({
     subsets: ['latin'],
@@ -40,9 +41,12 @@ export default function RootLayout({ children }) {
         <html className="bg-bg !scroll-smooth " lang="fr">
             <body className={`pt-28 sm:pt-28 ${mont.className}`}>
                 <ActiveSectionContextProvider>
+
+                    <Toaster />
                     {children}
                     {/* Speed Insights = vecel production tool */}
                     <SpeedInsights />
+
                 </ActiveSectionContextProvider>
             </body>
         </html>
