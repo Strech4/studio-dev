@@ -29,15 +29,20 @@ export const FormContact = () => {
     const onSubmit = async (data) => {
 
         if(!data){
+            toast.error("Please fill out the form !")
             return null
         }
 
-        const emailHasBeenSend = await sendEmail(data)
+        try {
+            const emailHasBeenSend = await sendEmail(data)
 
-        if(emailHasBeenSend){
-            toast.success('Email envoyé')
-            reset()
-        } else {
+            if(emailHasBeenSend){
+                toast.success('Email envoyé')
+                reset()
+            } else {
+                toast.error('Oupps ça na pas marcher ! vous pouvez toujours me contactez via mon email : contact@studio-dev.fr')
+            }
+        } catch (error) {
             toast.error('Oupps ça na pas marcher ! vous pouvez toujours me contactez via mon email : contact@studio-dev.fr')
         }
 
