@@ -33,13 +33,13 @@ export const Header = () => {
                 }}
 
             >
-                <h1 className='text-6xl md:text-8xl lg:text-9xl font-extrabold font-mont text-high-contrast tracking-wide'>
+                <h1 className='text-5xl md:text-8xl lg:text-9xl font-extrabold font-mont text-high-contrast tracking-wide'>
                     Studio-dev
                 </h1>
             </motion.div>
         </div>
         <motion.p 
-            className=' max-w-5xl mt-4 mb-10 px-4 text-2xl font-mont !leading-[1.4] sm:text-4xl text-center text-low-contrast'
+            className=' max-w-5xl mt-4 mb-10 px-4 text-xl font-mont !leading-[1.4] sm:text-4xl text-center text-low-contrast'
             initial={{ opacity: 0, y: 500 }}
             animate={{ opacity: 1, y: 0 }}
         >
@@ -54,10 +54,6 @@ export const Header = () => {
             }}
         >
             <ContactButton />
-
-            <Link href="#contact" className='bg-ui-bg text-high-contrast p-4 flex items-center gap-2 rounded-full hover:scale-110 hover:bg-hover transition-all'>
-                <Github />
-            </Link>
 
         </motion.div>
     </section>

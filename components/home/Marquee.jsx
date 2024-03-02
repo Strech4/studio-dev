@@ -20,7 +20,7 @@ export const Marquee = () => {
             />
             <section className='w-full  overflow-hidden whitespace-nowrap bg-high-contrast'>
                 <motion.h2
-                    className='text-[4rem] sm:text-[8rem] font-bold fot-mont text-bg uppercase italic'
+                    className='text-[3rem] sm:text-[6rem] font-bold fot-mont text-bg uppercase italic'
                     style={{ x }}
                 >
                     Design - Création - Dévelopement

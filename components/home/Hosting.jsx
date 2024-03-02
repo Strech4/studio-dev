@@ -64,8 +64,8 @@ export const Hosting = () => {
 
                 <div className="grid grid-rows-3 gap-y-4 p-5">
                     {data.map((item, index) => (
-                        <div className={clsx(`flex p-2`, item.class)} key={index}>
-                            <div className="flex justify-center items-center mr-5">
+                        <div className={clsx(`flex flex-col md:flex-row p-3 gap-2`, item.class)} key={index}>
+                            <div className="flex md:justify-center md:items-center mr-5">
                                 <div className="rounded-full p-4 bg-ui-bg">
                                     {item.icon}
                                 </div>

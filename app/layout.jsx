@@ -12,8 +12,11 @@ const mont = Montserrat({
 
 export const metadata = {
     title: "Studio-dev | Développeur Web",
-    description: "Studio-dev",
+    description: "Conception de sites vitrine, portfolios et e-commerce. Hébergement adapté à vos besoins pour garantir une présence en ligne optimale",
     keywords: [
+        'studio-dev',
+        'studio',
+        'dev',
         'Next.js',
         'React',
         'JavaScript', 
@@ -34,6 +37,9 @@ export const metadata = {
         'dev front-end',
     ],
     publisher: 'Studio-dev',
+    twitter: {
+        card: "summary_large_image"
+    }
 };
 
 export default function RootLayout({ children }) {

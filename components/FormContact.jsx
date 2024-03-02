@@ -37,10 +37,14 @@ export const FormContact = () => {
             const emailHasBeenSend = await sendEmail(data)
 
             if(emailHasBeenSend){
-                toast.success('Email envoyé')
+                toast.success('Email envoyé', {
+                    duration: 10000
+                })
                 reset()
             } else {
-                toast.error('Oupps ça na pas marcher ! vous pouvez toujours me contactez via mon email : contact@studio-dev.fr')
+                toast.error('Oupps ça na pas marcher ! vous pouvez toujours me contactez via mon email : contact@studio-dev.fr', {
+                    duration: 10000
+                })
             }
         } catch (error) {
             toast.error('Oupps ça na pas marcher ! vous pouvez toujours me contactez via mon email : contact@studio-dev.fr')

@@ -10,9 +10,6 @@ export const Footer = () => {
             <p className='text-sm text-low-contrast'>
                 Crée avec NextJS 14 (app router) - tailwindcss - framer-motion - react-hook-form 
             </p>
-            <p className='text-sm text-high-contrast'>
-                Site web en développement
-            </p>
         </div>
     </footer>
   )
