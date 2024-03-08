@@ -16,12 +16,12 @@ export const Header = () => {
 
     useEffect(() => {
         if(inView && Date.now() - timeOfLastClick > 1000){
-            setActiveSection('#home');
+            setActiveSection('/#home');
         }
     }, [inView])
 
   return (
-    <section className=' sm:mb-0 scroll-mt-[100rem]' ref={ref}>
+    <section className=' sm:mb-0 scroll-mt-36' ref={ref}>
         <div className='flex items-center justify-center'>
             <motion.div 
                 className=''
@@ -33,19 +33,32 @@ export const Header = () => {
                 }}
 
             >
-                <h1 className='text-5xl md:text-8xl lg:text-9xl font-extrabold font-mont text-high-contrast tracking-wide'>
+                <h1 className='text-7xl md:text-8xl lg:text-9xl font-extrabold font-mont text-high-contrast tracking-wide'>
                     Studio-dev
                 </h1>
             </motion.div>
         </div>
+        <div>
+            <motion.h3 
+                className='text-center text-high-contrast my-4 md:my-8 font-semibold text-xl sm:text-2xl md:text-3xl tracking-wide'
+                initial={{opacity: 0, scale: 0}}
+                animate={{opacity: 1, scale: 1}}
+                transition={{
+                    type:"tween",
+                    duration: 0.5,
+                }}
+            >
+                Design - Création - Dévelopement
+            </motion.h3>
+        </div>
         <motion.p 
-            className=' max-w-5xl mt-4 mb-10 px-4 text-xl font-mont !leading-[1.4] sm:text-4xl text-center text-low-contrast'
+            className=' max-w-5xl mt-4 mb-10 px-4 text-lg font-mont !leading-[1.5] sm:text-3xl md:text-4xl text-center text-low-contrast'
             initial={{ opacity: 0, y: 500 }}
             animate={{ opacity: 1, y: 0 }}
         >
-            Conception de sites vitrine, portfolios et e-commerce. Hébergement adapté à vos besoins pour garantir une présence en ligne optimale
+            Conception sur mesure de sites vitrine, portfolios et e-commerce. Hébergement adapté à vos besoins pour assurer une présence en ligne optimale.
         </motion.p>
-        <motion.div 
+        <motion.div
             className='flex sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium'
             initial={{ opacity: 0, y: 500 }}
             animate={{ opacity: 1, y: 0 }}

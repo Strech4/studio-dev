@@ -21,7 +21,7 @@ export const Hosting = () => {
             title: "Sécurité",
             text: "Sécurité maximale pour votre site web grâce à notre hébergement, protégeant ansi vos données comme il le faudrais ",
             icon: <ShieldCheck size={32} color="#16433C" />,
-            class: "bg-hover/40 rounded-2xl"
+            class: "bg-gradient-to-b from-hover/70 via-hover/80 to-hover rounded-2xl"
         },
         {
             title: "Maintenence",
@@ -38,7 +38,7 @@ export const Hosting = () => {
 
     useEffect(() => {
         if (inView && Date.now() - timeOfLastClick > 1000) {
-            setActiveSection('#hosting');
+            setActiveSection('/#hosting');
         }
     }, [inView])
 
@@ -49,7 +49,7 @@ export const Hosting = () => {
             className='sm:max-w-6xl w-full px-6 sm:px-4 scroll-mt-28 '
         >
 
-            <div className="flex flex-col md:grid grid-cols-2 gap-7">
+            <div className="flex flex-col md:grid grid-cols-2 gap-7 ">
                 <div>
                     <h1 className="mb-8 text-high-contrast text-2xl md:text-4xl font-bold tracking-wide !leading-[1.3]">
                         Performance assurée hébergement sur mesure
@@ -66,7 +66,7 @@ export const Hosting = () => {
                     {data.map((item, index) => (
                         <div className={clsx(`flex flex-col md:flex-row p-3 gap-2`, item.class)} key={index}>
                             <div className="flex md:justify-center md:items-center mr-5">
-                                <div className="rounded-full p-4 bg-ui-bg">
+                                <div className="bg-ui-bg/80 p-3 rounded-2xl">
                                     {item.icon}
                                 </div>
                             </div>

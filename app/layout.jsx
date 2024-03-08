@@ -3,6 +3,7 @@ import "./globals.css";
 import ActiveSectionContextProvider from "@/context/ActiveSectionContext";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from 'react-hot-toast';
+import { Nav} from "@/components/home/Nav";
 
 const mont = Montserrat({
     subsets: ['latin'],
@@ -39,16 +40,17 @@ export const metadata = {
     publisher: 'Studio-dev',
     twitter: {
         card: "summary_large_image"
-    }
+    },
 };
 
 export default function RootLayout({ children }) {
     return (
         <html className="bg-bg !scroll-smooth " lang="fr">
-            <body className={`pt-28 sm:pt-28 ${mont.className}`}>
+            <body className={`pt-28 sm:pt-28 overflow-x-hidden ${mont.className}`}>
                 <ActiveSectionContextProvider>
 
                     <Toaster />
+                    <Nav />
                     {children}
                     {/* Speed Insights = vecel production tool */}
                     <SpeedInsights />

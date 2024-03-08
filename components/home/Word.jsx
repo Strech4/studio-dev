@@ -15,7 +15,7 @@ export const Paragraph = ({value}) => {
     return (
         <motion.p
             ref={elm}
-            className='text-3xl sm:text-4xl font-mont text-low-contrast mx-auto my-5 flex flex-wrap leading-[1] px-4'
+            className='text-2xl sm:text-4xl font-mont text-low-contrast mx-auto my-5 flex flex-wrap leading-[1] px-4'
             
         >
             {

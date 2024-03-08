@@ -8,30 +8,30 @@ import BottomWave from "@/public/bottomwave.svg"
 export const Marquee = () => {
 
     const { scrollYProgress } = useScroll();
-    const x = useTransform(scrollYProgress, [0, 1], [0, -500])
+    const x = useTransform(scrollYProgress, [0, 1], [0, 340])
 
     return (
         <>
-            <Image
+            {/* <Image
                 className='w-full select-none'
                 src={TopWave}
                 quality={95}
                 alt='Green wave on top of the marquee'
-            />
-            <section className='w-full  overflow-hidden whitespace-nowrap bg-high-contrast'>
+            /> */}
+            <section className='w-full my-12 py-4 overflow-hidden whitespace-nowrap bg-high-contrast'>
                 <motion.h2
-                    className='text-[3rem] sm:text-[6rem] font-bold fot-mont text-bg uppercase italic'
+                    className='text-[3rem] sm:text-[3rem] font-bold fot-mont text-bg uppercase '
                     style={{ x }}
                 >
                     Design - Création - Dévelopement
                 </motion.h2>
             </section>
-            <Image
+            {/* <Image
                 className='w-full select-none'
                 src={BottomWave}
                 quality={95}
                 alt='Green wave on bottom of the marquee'
-            />
+            /> */}
         </>
     )
 }

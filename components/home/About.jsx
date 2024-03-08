@@ -17,7 +17,7 @@ export const About = () => {
 
     useEffect(() => {
         if(inView && Date.now() - timeOfLastClick > 1000){
-            setActiveSection('#about');
+            setActiveSection('/#about');
         }
     }, [inView, setActiveSection, timeOfLastClick])
     
@@ -25,7 +25,7 @@ export const About = () => {
         <motion.section
             ref={ref}
             id='about'
-            className='mb-28 max-w-5xl scroll-mt-28'
+            className='mb-14 max-w-5xl scroll-mt-28'
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.175 }}

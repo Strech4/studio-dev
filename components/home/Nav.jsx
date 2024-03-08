@@ -1,50 +1,61 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from "framer-motion";
 import Link from "next/link";
 import clsx from 'clsx';
 import { useActiveSectionContext } from '@/context/ActiveSectionContext';
+import { Menu, X } from "lucide-react"
 
 const links = [
-    { name: "Accueil", link: "#home" },
-    { name: "A propos", link: "#about" },
-    { name: "Hébergement", link: "#hosting" },
-    { name: "Contact", link: "#contact" },
+    { name: "Accueil", link: "/#home", linkUI: "#home" },
+    { name: "A propos", link: "/#about", linkUI: "#about" },
+    { name: "Hébergement", link: "/#hosting", linkUI: "#hosting" },
+    { name: "Contact", link: "/#contact", linkUI: "#contact" },
+    { name: "Templates", link: "/templates", linkUI: "#templates" }
 ]
 
 export const Nav = () => {
 
     const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+    const [open, setOpen] = useState(false)
+
+    const handleNav = () => {
+        setOpen(!open)
+    }
 
     return (
-        <header className='relative z-40'>
-            <motion.div
-                className='fixed top-0 left-1/2 -translate-x-1/2 h-20 w-full rounded-none bg-ui-bg/70 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.5rem] sm:w-[36rem] sm:rounded-full'
-                initial={{ y: -100, x: '-50%', opacity: 0 }}
-                animate={{ y: 0, x: '-50%', opacity: 1 }} 
-            >
-            </motion.div>
-            <nav className='flex fixed top-[0.15rem] left-1/2 h-12 -translate-x-1/2 py-2 sm:top-[1.7rem] sm:h-[initial] sm:py-0'>
-                 <ul className='flex w-[22rem] flex-wrap items-center justify-center gap-y-1 text-sm font-medium text-high-contrast sm:w-[initial] sm:flex-nowrap sm:gap-5'>
-                    {links.map((link, i) => (
-                        <motion.li 
-                            key={i} 
-                            className='h-3/4 flex items-center justify-center relative'
-                            initial={{ y: -100, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }} 
-                        >
-                            <Link 
-                                className={clsx('flex w-full items-center justify-center px-3 py-3')}
-                                href={link.link}
-                                onClick={() => {
-                                    setActiveSection(link.link)
-                                    setTimeOfLastClick(Date.now())
-                                }}
+        <motion.nav 
+            className='fixed z-50 top-0 h-16 bg-ui-bg/70 backdrop-blur-[0.5rem] w-full shadow-lg shadow-black/[0.03]'
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+        >
+            <div className='flex justify-between items-center max-w-5xl mx-auto h-full px-10 sm:px-5'>
+                <div className=''>
+                    <p className='text-lg lg:text-xl text-high-contrast font-semibold'>
+                        Studio-dev
+                    </p>
+                </div>
+                <div>
+                    <ul className='hidden md:flex'>
+                        {links.map((link, i) => (
+                            <motion.li
+                                key={i}
+                                className='flex items-center justify-center relative text-high-contrast'
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
                             >
+                                <Link
+                                    className={clsx('flex w-full items-center justify-center px-3 py-1')}
+                                    href={link.link}
+                                    onClick={() => {
+                                        setActiveSection(link.link)
+                                        setTimeOfLastClick(Date.now())
+                                    }}
+                                >
                                     {link.name}
 
                                     {link.link === activeSection && (
-                                        <motion.span 
+                                        <motion.span
                                             className='bg-hover rounded-full absolute inset-0 -z-10'
                                             layoutId='activeSection'
                                             transition={{
@@ -54,11 +65,45 @@ export const Nav = () => {
                                             }}
                                         ></motion.span>
                                     )}
+                                </Link>
+                            </motion.li>
+                        ))}
+                    </ul>
+                </div>
+                <div
+                    onClick={handleNav}
+                    className={`md:hidden cursor-pointer transition-all ${open ? 'ease-out' : 'ease-in'} duration-500`}
+                >
+                    {open ? <X size={28} color='#16433C' /> : <Menu size={28} color='#16433C' />}
+                </div>
+            </div>
+            <div className={clsx(
+                'backdrop-blur-[0.5rem] bg-ui-bg/70',
+                open ?
+                    'fixed left-0 top-16 w-[100%] md:hidden h-screen px-10 ease-in duration-300'
+                    : 'fixed left-[-100%] top-16 px-10 ease-in duration-300 h-screen'
+            )}>
+                <ul className='flex flex-col gap-4'>
+                    {links.map((link, i) => (
+                        <li 
+                        className="text-lg"
+                            key={i}
+                        >
+                            <Link 
+                                href={link.link}
+                                onClick={() => {
+                                    setActiveSection(link.link)
+                                    setTimeOfLastClick(Date.now())
+                                    setOpen(!open)
+                                }}
+                            >
+                                {link.name}
                             </Link>
-                        </motion.li>
+                           
+                        </li>
                     ))}
-                 </ul>
-            </nav>
-        </header>
+                </ul>
+            </div>
+        </motion.nav>
     )
 }

@@ -18,7 +18,7 @@ export const Contact = () => {
 
     useEffect(() => {
         if (inView && Date.now() - timeOfLastClick > 1200) {
-            setActiveSection('#contact');
+            setActiveSection('/#contact');
         }
     }, [inView])
 
