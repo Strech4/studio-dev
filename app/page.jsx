@@ -18,7 +18,7 @@ export default function Home() {
                 <Divider />
                 <About />
                 <Templates />
-                <HorizontalScroll />
+               {/*  <HorizontalScroll /> */}
                 <Divider />
                 {/* <Marquee /> */}
                 <Hosting />

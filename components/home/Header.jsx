@@ -33,14 +33,14 @@ export const Header = () => {
                 }}
 
             >
-                <h1 className='text-7xl md:text-8xl lg:text-9xl font-extrabold font-mont text-high-contrast tracking-wide'>
+                <h1 className='text-5xl md:text-8xl lg:text-9xl font-extrabold font-mont text-high-contrast tracking-wide text-nowrap'>
                     Studio-dev
                 </h1>
             </motion.div>
         </div>
         <div>
             <motion.h3 
-                className='text-center text-high-contrast my-4 md:my-8 font-semibold text-xl sm:text-2xl md:text-3xl tracking-wide'
+                className='text-center text-high-contrast my-4 md:my-8 font-semibold text-lg sm:text-2xl md:text-3xl tracking-wide'
                 initial={{opacity: 0, scale: 0}}
                 animate={{opacity: 1, scale: 1}}
                 transition={{

@@ -11,7 +11,7 @@ export const TemplatesLink = () => {
     return (
         <>
             <Link 
-                className="hover:scale-105 transition-all flex items-center gap-3" 
+                className="flex items-center gap-3" 
                 href="/templates"
                 onClick={() => {
                     setActiveSection("/templates")

@@ -1,12 +1,9 @@
 "use client"
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { FormContact } from '../FormContact'
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/context/ActiveSectionContext';
 import SectionHeading from './SectionHeading';
-
-import { useScroll, motion, useTransform } from "framer-motion";
-
 export const Contact = () => {
 
     // NAV ANIMATION
