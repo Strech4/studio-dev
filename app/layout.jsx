@@ -4,6 +4,7 @@ import ActiveSectionContextProvider from "@/context/ActiveSectionContext";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from 'react-hot-toast';
 import { Nav} from "@/components/home/Nav";
+import { Footer } from "@/components/Footer";
 
 const mont = Montserrat({
     subsets: ['latin'],
@@ -16,18 +17,16 @@ export const metadata = {
     description: "Conception de sites vitrine, portfolios et e-commerce. Hébergement adapté à vos besoins pour garantir une présence en ligne optimale",
     keywords: [
         'studio-dev',
+        'dev studio',
         'studio',
         'dev',
-        'Next.js',
-        'React',
-        'JavaScript', 
-        'studio-dev', 
         'création',
         'web', 
         'web-master', 
         'design', 
         'design web', 
         'développeur',
+        'développeur web',
         'portfolios',
         'vitrine',
         'e-commerce',
@@ -52,6 +51,7 @@ export default function RootLayout({ children }) {
                     <Toaster />
                     <Nav />
                     {children}
+                    <Footer />
                     {/* Speed Insights = vecel production tool */}
                     <SpeedInsights />
 

@@ -55,7 +55,7 @@ export const Hosting = () => {
                         Performance assurée hébergement sur mesure
                     </h1>
                     <p className="mb-10 text-low-contrast text-lg md:text-xl tracking-wide !leading-[1.6]">
-                        Assurez la stabilité de n'importe lequel de vos projets web grâce à un hébergement adapté, créé sur mesure. Une infrastructure robuste pour garantir des performances optimales. Offrez à vos idées le support qu'elles méritent.
+                        Assurez la stabilité de n'importe lequel de vos projets web grâce à un hébergement adapté, Une infrastructure robuste pour garantir des performances optimales. Offrez à vos idées le support qu'elles méritent.
                     </p>
                     <div className="flex">
                         <ContactButton />

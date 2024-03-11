@@ -31,7 +31,7 @@ export const Nav = () => {
         >
             <div className='flex justify-between items-center max-w-5xl mx-auto h-full px-10 sm:px-5'>
                 <div className=''>
-                    <p className='text-lg lg:text-xl text-high-contrast font-semibold'>
+                    <p className='text-lg lg:text-xl text-high-contrast font-bold'>
                         Studio-dev
                     </p>
                 </div>

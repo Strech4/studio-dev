@@ -1,8 +1,6 @@
 "use client"
 import React, { useEffect } from 'react'
 import { motion } from "framer-motion"
-import Link from "next/link";
-import { MoveRight, Github } from "lucide-react"
 import { useInView } from 'react-intersection-observer';
 import { useActiveSectionContext } from '@/context/ActiveSectionContext';
 import { ContactButton } from '../ContactButton';
@@ -33,14 +31,14 @@ export const Header = () => {
                 }}
 
             >
-                <h1 className='text-5xl md:text-8xl lg:text-9xl font-extrabold font-mont text-high-contrast tracking-wide text-nowrap'>
+                <h1 className='text-6xl md:text-8xl lg:text-9xl font-extrabold font-mont tracking-wide text-nowrap text-transparent bg-clip-text bg-gradient-to-r from-high-contrast via-high-contrast/80 to-high-contrast'> 
                     Studio-dev
                 </h1>
             </motion.div>
         </div>
         <div>
             <motion.h3 
-                className='text-center text-high-contrast my-4 md:my-8 font-semibold text-lg sm:text-2xl md:text-3xl tracking-wide'
+                className='text-center text-transparent bg-clip-text bg-gradient-to-r from-high-contrast via-high-contrast/80 to-high-contrast my-4 md:my-8 font-semibold text-lg sm:text-2xl md:text-3xl tracking-wide'
                 initial={{opacity: 0, scale: 0}}
                 animate={{opacity: 1, scale: 1}}
                 transition={{

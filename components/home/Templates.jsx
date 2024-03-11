@@ -1,11 +1,9 @@
 import React from "react"
-import { TemplatesCard } from './TemplatesCard';
-import { SiNextdotjs, SiTailwindcss, SiReact, SiFramer, SiPrisma, SiVisualstudiocode } from "react-icons/si";
-import { AiFillCode } from "react-icons/ai";
-import { HiOutlineWindow } from "react-icons/hi2";
+import { TemplatesCard, TemplatesCard2 } from './TemplatesCard';
+import { SiNextdotjs, SiTailwindcss, SiReact, SiFramer, SiPrisma } from "react-icons/si";
+import { HiTemplate } from "react-icons/hi";
 import { TemplatesLink } from "./TemplatesLink";
-import { PiHandWaving, PiMagnifyingGlassFill } from "react-icons/pi";
-
+import { MdOutlineManageSearch } from "react-icons/md";
 export const Templates = () => {
 
     const iconSize = 60
@@ -53,10 +51,10 @@ export const Templates = () => {
                 <div className="rounded-xl bg-gradient-to-b from-hover/70 via-hover/80 to-hover w-full md:w-1/2">
                     <div className="px-6 py-10 flex gap-8 flex-wrap">
                         <div className="bg-ui-bg/80 p-3 rounded-2xl">
-                            <HiOutlineWindow color="#16433C" size={60} />
+                            <HiTemplate color="#16433C" size={60} />
                         </div>
                         <div className="bg-ui-bg/80 p-3 rounded-2xl">
-                            <PiMagnifyingGlassFill color="#16433C" size={60} />
+                            <MdOutlineManageSearch color="#16433C" size={60} />
                         </div>
                     </div>
 
@@ -74,28 +72,7 @@ export const Templates = () => {
 
                 </div>
 
-                <div className="rounded-xl bg-gradient-to-b from-hover/70 via-hover/80 to-hover w-full md:w-1/2">
-                    <div className="px-6 py-10 flex gap-8 flex-wrap">
-                        <div className="bg-ui-bg/80 p-3 rounded-2xl">
-                            <AiFillCode color="#16433C" size={60} />
-                        </div>
-                        <div className="bg-ui-bg/80 p-3 rounded-2xl">
-                            <SiVisualstudiocode color="#16433C" size={60} />
-                        </div>
-                        <div className="bg-ui-bg/80 p-3 rounded-2xl">
-                            <PiHandWaving color="#16433C" size={60} />
-                        </div>
-                    </div>
-                    <div className='w-full py-5 px-6'>
-                        <h4 className='text-high-contrast font-bold tracking-wide text-2xl sm:text-3xl !leading-[1.3]'>
-                            Made in Studio-dev
-                        </h4>
-                        <p className='text-low-contrast mt-4 text-xl'>
-                            Découvrez notre collection exclusive de templates originaux, conçus avec créativité pour vous offrir une expérience unique et personnalisée.
-                        </p>
-                    </div>
-
-                </div>
+                <TemplatesCard2 />
 
             </div>
 

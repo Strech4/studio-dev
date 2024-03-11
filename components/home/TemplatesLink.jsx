@@ -11,14 +11,14 @@ export const TemplatesLink = () => {
     return (
         <>
             <Link 
-                className="flex items-center gap-3" 
+                className="flex items-center gap-3 transition-all hover:scale-105 " 
                 href="/templates"
                 onClick={() => {
                     setActiveSection("/templates")
                     setTimeOfLastClick(Date.now())
                 }}
             >
-                <p className="text-high-contrast text-xl font-medium tracking-wide underline underline-offset-2">
+                <p className="text-high-contrast text-xl font-medium tracking-wide ">
                     Explorez maintenant
                 </p>
                 <MoveRight color="#16433C" size={40} />
