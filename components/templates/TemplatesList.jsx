@@ -3,6 +3,7 @@ import SectionHeading from '../home/SectionHeading'
 import Image from "next/image"
 import ImgTemplates from "@/public/templatesOne.png";
 import ImgSoon from "@/public/commingSoon.png"
+import PortfolioTemplate from "@/public/PortfolioTemplate.png"
 import { GoLinkExternal } from "react-icons/go";
 import Link from "next/link";
 
@@ -16,15 +17,26 @@ export const TemplatesList = () => {
             text: "Conçu spécialement pour mettre en valeur votre travail de manière élégante et professionnelle.",
             image: ImgTemplates,
             linkIcon: false,
+            link: "",
+        },
+        {
+            title: "Clasique Portfolio",
+            author: "SD",
+            by: "Studio-dev",
+            text: "Un portfolio Classique, mais modulable à l'infini pour présenter vos projets et compétences.",
+            image: PortfolioTemplate,
+            linkIcon: true,
+            link: "https://portfolio-template-ecru.vercel.app/"
         },
         {
             title: "Bientôt disponible",
             author: "SD",
-            by: "Studio-dev",
+            by: "",
             text: "Découvrez bientôt de nouveaux templates pour enrichir votre expérience et répondre à vos besoins de manière innovante.",
             image: ImgSoon,
             linkIcon: false,
-        }
+            link: "",
+        },
     ]
 
     return (
@@ -56,7 +68,7 @@ export const TemplatesList = () => {
                             {card.linkIcon ? (
                                 <div className='ml-auto hover:scale-110 transition-all'>
                                     <Link
-                                        href="/"
+                                        href={card.link}
                                         target='_blank'
                                     >
                                         <GoLinkExternal size={20} color='#16433C' />
